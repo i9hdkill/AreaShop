@@ -4,7 +4,6 @@ import com.sk89q.worldedit.EditSession;
 import com.sk89q.worldedit.IncompleteRegionException;
 import com.sk89q.worldedit.LocalSession;
 import com.sk89q.worldedit.MaxChangedBlocksException;
-import com.sk89q.worldedit.Vector;
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldedit.extent.clipboard.BlockArrayClipboard;
 import com.sk89q.worldedit.extent.clipboard.Clipboard;
@@ -17,6 +16,7 @@ import com.sk89q.worldedit.function.mask.Mask;
 import com.sk89q.worldedit.function.mask.Mask2D;
 import com.sk89q.worldedit.function.operation.ForwardExtentCopy;
 import com.sk89q.worldedit.function.operation.Operations;
+import com.sk89q.worldedit.math.BlockVector3;
 import com.sk89q.worldedit.regions.CuboidRegion;
 import com.sk89q.worldedit.regions.Region;
 import com.sk89q.worldedit.session.ClipboardHolder;
@@ -90,7 +90,7 @@ public class WorldEditHandler7 extends WorldEditInterface {
 		editSession.enableQueue();
 		ProtectedRegion region = regionInterface.getRegion();
 		// Get the origin and size of the region
-		Vector origin = new Vector(region.getMinimumPoint().getBlockX(), region.getMinimumPoint().getBlockY(), region.getMinimumPoint().getBlockZ());
+		BlockVector3 origin = BlockVector3.at(region.getMinimumPoint().getBlockY(), region.getMinimumPoint().getBlockY(), region.getMinimumPoint().getBlockZ());
 
 		// Read the schematic and paste it into the world
 		try(Closer closer = Closer.create()) {
@@ -127,7 +127,7 @@ public class WorldEditHandler7 extends WorldEditInterface {
 			if(region.getType() != RegionType.CUBOID) {
 				copy.setSourceMask(new Mask() {
 					@Override
-					public boolean test(Vector vector) {
+					public boolean test(BlockVector3 vector) {
 						return region.contains(vector);
 					}
 

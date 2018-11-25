@@ -26,14 +26,30 @@
             <artifactId>worldedit</artifactId>
             <scope>system</scope>
             <version>any</version>
-            <systemPath>${project.basedir}/../dependencies/worldedit-bukkit-7.0.0-beta-01.jar</systemPath>
+            <systemPath>${project.basedir}/../dependencies/worldedit-bukkit-7.0.0-20181124.031811-29.jar</systemPath>
         </dependency>
+
+        <dependency>
+            <groupId>com.sk89q</groupId>
+            <artifactId>worldedi-coret</artifactId>
+            <scope>system</scope>
+            <version>any</version>
+            <systemPath>${project.basedir}/../dependencies/worldedit-core-7.0.0-20181124.031811-29.jar</systemPath>
+        </dependency>
+
         <dependency>
             <groupId>com.sk89q</groupId>
             <artifactId>worldguard</artifactId>
             <scope>system</scope>
             <version>any</version>
-            <systemPath>${project.basedir}/../dependencies/worldguard-legacy-7.0.0-beta01.jar</systemPath>
+            <systemPath>${project.basedir}/../dependencies/worldguard-legacy-7.0.0-20181117.063337-9.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.sk89q</groupId>
+            <artifactId>worldguard-core</artifactId>
+            <scope>system</scope>
+            <version>any</version>
+            <systemPath>${project.basedir}/../dependencies/worldguard-core-7.0.0-20181117.063337-9.jar</systemPath>
         </dependency>
 
         <dependency>
