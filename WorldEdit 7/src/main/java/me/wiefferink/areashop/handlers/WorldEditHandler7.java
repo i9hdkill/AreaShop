@@ -90,7 +90,7 @@ public class WorldEditHandler7 extends WorldEditInterface {
 		editSession.enableQueue();
 		ProtectedRegion region = regionInterface.getRegion();
 		// Get the origin and size of the region
-		BlockVector3 origin = BlockVector3.at(region.getMinimumPoint().getBlockY(), region.getMinimumPoint().getBlockY(), region.getMinimumPoint().getBlockZ());
+		BlockVector3 origin = BlockVector3.at(region.getMinimumPoint().getBlockX(), region.getMinimumPoint().getBlockY(), region.getMinimumPoint().getBlockZ());
 
 		// Read the schematic and paste it into the world
 		try(Closer closer = Closer.create()) {
